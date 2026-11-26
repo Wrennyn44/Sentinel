@@ -1,0 +1,10 @@
+asgiref==3.11.1
+cffi==2.1.1
+cryptography==48.0.0
+Django==6.0.5
+joblib==1.6.0
+pandas==3.1.1
+pycparser==3.0
+python-dotenv==1.2.4
+scikit-learn==1.9.1
+sqlparse==0.5.5
