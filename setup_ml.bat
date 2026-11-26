@@ -1,6 +1,7 @@
 @echo off
 setlocal
 cd /d "%~dp0"
+if not defined DEBUG set "DEBUG=True"
 set "PYTHON=python"
 if not exist ".venv\Scripts\python.exe" (
   where py >nul 2>nul

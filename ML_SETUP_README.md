@@ -32,15 +32,19 @@ You should see `manage.py`.
 
 ## 2. Configure local environment
 
-Copy the example configuration and edit it as needed:
+Create a local configuration from the example only if you do not already have
+one:
 
 ```powershell
-Copy-Item .env.example .env
+if (-not (Test-Path .env)) { Copy-Item .env.example .env }
 ```
 
-`.env` is ignored by Git. Local development can leave `SECRET_KEY` blank; Django
-generates a temporary key while `DEBUG=True`. Set a persistent secret for
-production and use `DEBUG=False`. The chatbot remains disabled until
+`.env` is ignored by Git. For local development, set `DEBUG=True` in `.env`;
+you can leave `SECRET_KEY` blank because Django generates a temporary key in
+debug mode. Preserve any existing `.env` values. For production, use
+`DEBUG=False` and set a persistent secret. The setup batch file enables debug
+only for its own Django check when no `DEBUG` environment variable is already
+set; it does not change `.env`. The chatbot remains disabled until
 `GEMINI_API_KEY` is configured.
 
 ## 3. Install project dependencies
