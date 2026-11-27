@@ -42,8 +42,7 @@ docker-compose.override.yml
 
 devlog.txt
 
-# InsForge & AI agent skills
-.insforge
+# AI agent skills
 .agent
 .agents
 .augment
